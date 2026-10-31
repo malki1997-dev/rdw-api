@@ -1,0 +1,6 @@
+@RdwApi_HostAddress = http://localhost:5294
+
+GET {{RdwApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
