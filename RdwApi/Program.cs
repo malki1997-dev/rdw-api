@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RdwApi.Data;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();   // interface de test sur /scalar
 }
 
 app.UseHttpsRedirection();
