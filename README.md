@@ -1,5 +1,7 @@
 # API de fiabilité des véhicules (RDW)
 
+[![CI](https://github.com/malki1997-dev/rdw-api/actions/workflows/ci.yml/badge.svg)](https://github.com/malki1997-dev/rdw-api/actions/workflows/ci.yml)
+
 API REST ASP.NET Core qui expose les taux de défaut au contrôle technique (APK) des voitures particulières néerlandaises, par marque, modèle, carburant et âge. Elle lit des tables résumées produites par le [pipeline de données](https://github.com/malki1997-dev/rdw-car-reliability-pipeline) (83,5 millions de lignes du RDW traitées avec Spark, dbt et Airflow).
 
 **Définition :** le taux de défaut (`defectRatePct`) est la part des contrôles APK qui ont au moins un défaut.
