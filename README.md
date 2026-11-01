@@ -70,6 +70,17 @@ dotnet run --launch-profile http
 
 En développement, une documentation interactive (Scalar) est disponible sur `/scalar`.
 
+## Lancer avec Docker
+
+```bash
+docker build -t rdw-api .
+docker run -d -p 8081:8080 \
+  -e "ConnectionStrings__Rdw=Host=host.docker.internal;Port=5433;Database=rdw;Username=rdw_api;Password=VOTRE_MOT_DE_PASSE" \
+  -e "ApiKey=une-cle-longue-et-aleatoire" \
+  rdw-api
+```
+
+L'image utilise un build en deux étapes (SDK puis runtime ASP.NET) et s'exécute avec un utilisateur non root. Les secrets sont fournis par variables d'environnement et ne sont jamais intégrés à l'image. `host.docker.internal` désigne la machine hôte avec Docker Desktop.
 ## Sécurité
 
 - **Clé API** dans l'en-tête `X-Api-Key`, comparée à temps constant ; l'API refuse de démarrer sans clé.
